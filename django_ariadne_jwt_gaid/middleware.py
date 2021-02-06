@@ -2,9 +2,11 @@
 from django.contrib.auth import authenticate
 from django.contrib.auth.models import AnonymousUser
 from .utils import get_token_from_http_header
+import logging
 
 __all__ = ["JSONWebTokenMiddleware"]
 
+logger = logging.getLogger(__name__)
 
 class JSONWebTokenMiddleware(object):
     """Middleware to be used in conjuction with ariadne grapqh_* methods"""
