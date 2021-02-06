@@ -21,8 +21,8 @@ def get_version(package):
 
 
 setup(
-    name='django-ariadne-jwt',
-    version=get_version('django_ariadne_jwt'),
+    name='django-ariadne-jwt-gaid',
+    version=get_version('django_ariadne_jwt-gaid'),
     license='MIT',
     description='JSON Web Token for Django Ariadne',
     long_description='\n\n'.join(get_long_description()),
@@ -67,7 +67,7 @@ setup(
         'PyJWT>=1.5.0',
     ],
     package_data={
-        'ardiadne_django_jwt': [
+        'ardiadne_django_jwt_gaid': [
             'locale/*/LC_MESSAGES/django.po',
             'locale/*/LC_MESSAGES/django.mo',
         ],
