@@ -25,6 +25,7 @@ class JSONWebTokenMiddleware(object):
 
           if user is not None:
               info.context["user"] = user
+              self.context.request.user = user
               logger.debug(f'Info context user: {info.context["user"]}')
 
       return next(root, info, **kwargs)
