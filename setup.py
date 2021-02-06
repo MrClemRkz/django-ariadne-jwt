@@ -26,14 +26,14 @@ setup(
     license='MIT',
     description='JSON Web Token for Django Ariadne',
     long_description='\n\n'.join(get_long_description()),
-    author='marco-btree',
-    author_email='marco@binarytree-software.com',
-    maintainer='marco-btree',
-    url='https://github.com/binarytree-software/django-ariadne-jwt',
+    author='Sven',
+    author_email='github@gaid.nl',
+    maintainer='svenvintges',
+    url='https://github.com/svenvintges/django-ariadne-jwt',
     project_urls=OrderedDict((
         (
             'Issues',
-            'https://github.com/binarytree-software/django-ariadne-jwt/issues'
+            'https://github.com/svenvintges/django-ariadne-jwt/issues'
         ),
     )),
     packages=find_packages(exclude=['tests*']),

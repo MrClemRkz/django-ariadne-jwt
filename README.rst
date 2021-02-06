@@ -4,6 +4,7 @@ Django Ariadne JWT
 
 Support for JWT based authentication for use with the ariadne_ graphql library
 running inside a Django_ project. It is heavily inspired by django-graph-jwt_.
+This project is a fork of the Binarytree repo, it fixes issues with the new Ariadne features.
 
 Installation
 ------------
