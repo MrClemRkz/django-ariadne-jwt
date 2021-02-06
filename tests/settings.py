@@ -15,7 +15,7 @@ SECRET_KEY = 'test'
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
-    'django_ariadne_jwt.backends.JSONWebTokenBackend',
+    'django_ariadne_jwt_gaid.backends.JSONWebTokenBackend',
 ]
 
 TIME_ZONE = "UTC"
