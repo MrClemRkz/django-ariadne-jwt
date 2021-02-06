@@ -17,7 +17,6 @@ class JSONWebTokenMiddleware(object):
 
       token = get_token_from_http_header(request)
       if token is not None:
-          logger.debug(f'User: {getattr(info.context, "user", "sven")}')
           user = getattr(info.context, "user", None)
 
           if user is None or isinstance(user, AnonymousUser):
