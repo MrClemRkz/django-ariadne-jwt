@@ -22,7 +22,7 @@ def get_version(package):
 
 setup(
     name='django-ariadne-jwt-gaid',
-    version=get_version('django_ariadne_jwt-gaid'),
+    version=get_version('django_ariadne_jwt_gaid'),
     license='MIT',
     description='JSON Web Token for Django Ariadne',
     long_description='\n\n'.join(get_long_description()),
