@@ -21,11 +21,9 @@ class JSONWebTokenMiddleware(object):
 
           if user is None or isinstance(user, AnonymousUser):
               user = authenticate(request=request, token=token)
-              logger.debug(f'User is now: {user}')
 
           if user is not None:
               info.context["user"] = user
               info.context["request"].user = user
-              logger.debug(f'Info context user: {info.context["user"]}')
 
       return next(root, info, **kwargs)
