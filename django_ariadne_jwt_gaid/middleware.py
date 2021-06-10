@@ -18,7 +18,7 @@ class JSONWebTokenMiddleware(object):
       token = get_token_from_http_header(request)
       if token is not None:
           # user = info.context["user"]
-          user = getattr(info.context, "user", None)
+          user = request.user
           logging.debug(f'User:{user}')
           logging.debug(f'Request:{request}')
           logging.debug(f'context: {info.context}')
