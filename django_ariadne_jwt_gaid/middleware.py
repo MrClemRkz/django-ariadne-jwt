@@ -17,7 +17,10 @@ class JSONWebTokenMiddleware(object):
 
       token = get_token_from_http_header(request)
       if token is not None:
-          user = getattr(info.context, "user", None)
+          user = info.context["user"]
+          logging.debug(f'User:{user}')
+          logging.debug(f'Request:{request}')
+          #user = getattr(info.context, "user", None)
 
           if user is None or isinstance(user, AnonymousUser):
               user = authenticate(request=request, token=token)
