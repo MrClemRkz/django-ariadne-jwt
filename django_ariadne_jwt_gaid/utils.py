@@ -56,16 +56,17 @@ def has_reached_end_of_life(oldest_iat_claim):
     return now > end_of_life
 
 
-def create_jwt(user, extra_payload={}):
+def create_jwt(user, extra_payload={}, jwt_expiration_delta = None):
     """Creates a JWT for an authenticated user"""
     if not user.is_authenticated:
         raise AuthenticatedUserRequiredError(
             "JWT generationr requires an authenticated user"
         )
 
-    expiration_delta = getattr(
-        settings, "JWT_EXPIRATION_DELTA", datetime.timedelta(minutes=5)
-    )
+    if jwt_expiration_delta:
+        expiration_delta = jwt_expiration_delta
+    else:
+        expiration_delta = datetime.timedelta(minutes=5)
 
     now = timezone.localtime()
 
@@ -98,7 +99,11 @@ def refresh_jwt(token):
     except User.DoesNotExist:
         raise InvalidTokenError(_("User not found"))
 
-    return create_jwt(user, {ORIGINAL_IAT_CLAIM: decoded["iat"]})
+    return create_jwt(
+        user,
+        {ORIGINAL_IAT_CLAIM: decoded["iat"]},
+        settings, "JWT_EXPIRATION_DELTA", datetime.timedelta(minutes=5)
+    )
 
 
 def decode_jwt(token):
